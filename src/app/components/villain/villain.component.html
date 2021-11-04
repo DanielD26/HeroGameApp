@@ -1,0 +1,5 @@
+<!-- guard to stop the for loop from happening before the villains are loaded -->
+<div *ngIf="villain">
+  <p> Name: {{ villain.name }}</p>
+  <p> HP: {{ villain.HP }}</p>
+</div>

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.display {
+  display: flex;
+}
+
+.display :hover {
+  background-color: rgb(214, 211, 211);
+  opacity: 50%;
+}
+
+app-hero {
+  border: 1px solid;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+app-villain {
+  border: 1px solid;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+button {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.selected {
+  opacity: 50%;
+  transform: scale(1.1);
+}
+
+
+.reset {
+  border: 1px solid;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+

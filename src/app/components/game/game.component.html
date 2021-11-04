@@ -1,0 +1,33 @@
+<body>
+  <button type="button" id="start" [disabled]="clicked" (click)="loadGame(); clicked=true" >Start</button>
+  <br />
+  <!-- If selectedHero is not null, display selected hero name, otherwise do nothing -->
+  <h1> Select Hero: {{ currentSelectedHeroIndex ?  heroList[(currentSelectedHeroIndex)].name : "" }} </h1>
+
+  <div class="display" >
+    <!-- for loop to display the heroes with the styling and click event to select hero -->
+    <app-hero *ngFor="let hero of heroList; let i = index" [id]="i" [hero]="hero" (click)="setSelectedHero($event)"></app-hero>
+  </div>
+  <hr />
+
+  <!-- If selectedVillain is not null, display selected villain name, otherwise do nothing -->
+  <h1> Select Villain:  {{ currentSelectedVillainIndex ?  villainsList[(currentSelectedVillainIndex)].name : "" }}</h1>
+  <div class="display">
+    <!-- for loop to display the villains with the styling and click event to select villain -->
+    <app-villain *ngFor="let villain of villainsList; let i = index" [id]="i" [villain]="villain" (click)="setSelectedVillain($event)"></app-villain>
+  </div>
+  <hr />
+
+  <div>
+    <!-- shows the selected hero's name, attacks, shows the selected villain's name -->
+    <p>{{ currentSelectedHeroIndex ?  heroList[(currentSelectedHeroIndex)].name : "" }} attacks {{ currentSelectedVillainIndex ?  villainsList[(currentSelectedVillainIndex)].name : "" }} </p>
+    <p id="result-disp">No attacks</p>
+  </div>
+
+  <button id="roll-btn" [disabled]="chosenHeroVillain" (click)="roll()">Roll</button>
+
+  <hr />
+  <div id="results">
+    <app-result *ngFor="let result of resultsList;" [result]="result"></app-result>
+  </div>
+</body>

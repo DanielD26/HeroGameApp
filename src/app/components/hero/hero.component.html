@@ -1,0 +1,6 @@
+<!-- guard to stop the for loop from happening before the heroes are loaded -->
+<div *ngIf="hero">
+  <p>Name: {{ hero.name }} </p>
+  <p>Roll: {{ hero.minDice }} - {{ hero.maxDice }}</p>
+  <p>Uses: {{ hero.uses }} </p>
+</div>
